@@ -67,6 +67,7 @@ function switchTheme(css_theme) {
   }
 }
 
+// Function used to render the soundBoard 
 function createSoundboard(config, theme, compORrich) {
   // Clear all previous HTML, if any.
   $('#soundBoard').empty();
@@ -81,7 +82,8 @@ function createSoundboard(config, theme, compORrich) {
   const substrMP3 = "mp3";
   const conImgDir = "../img/" 
   const conSoundDir = "../sounds/"
-
+  
+  // Loop through the config file to dynamically create each sound and image pair
   for(numI = 0; numI < 12; numI++) {
     if(compORrich === 'full'){
       var objDiv = $("<div></div>")
@@ -112,7 +114,8 @@ function createSoundboard(config, theme, compORrich) {
     else {
       console.log("Error: this sound doesn't exist.");
     }
-  
+    
+    //append newly created elements  
     $(objAudioCont).append(objSound)
     
     if(compORrich === 'full'){
